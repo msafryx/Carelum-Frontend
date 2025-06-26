@@ -1,28 +1,28 @@
-import StackNavigator from "@/app/navigation/stack-navigation/StackNavigation";
+import HomeScreen from "@/components/ui/screen/HomeScreen"; // Add this if needed
+import LandingScreen from "@/components/ui/screen/LandingScreen";
 import SplashScreen from "@/components/ui/screen/SplashScreen";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
+  if (isLoading) {
+    return (
+      <SplashScreen
+        onFinish={() => {
+          setIsLoading(false);
+        }}
+      />
+    );
+  }
+
   return (
-    <View style={styles.container}>
-      {isLoading ? (
-        <SplashScreen
-          onFinish={() => {
-            setIsLoading(false);
-          }}
-        />
-      ) : (
-        <StackNavigator />
-      )}
-    </View>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Landing" component={LandingScreen} />
+      <Stack.Screen name="Home" component={HomeScreen} />
+    </Stack.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
