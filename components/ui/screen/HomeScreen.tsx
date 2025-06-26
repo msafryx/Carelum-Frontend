@@ -53,19 +53,30 @@ export default function HomeScreen() {
   );
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>What type of care do you need?</Text>
-      <Text style={styles.subheading}>
-        Joining Care gives you access to caregivers for the whole household.
-      </Text>
+    <View style={styles.containerWrapper}>
+      {/* Top Bar without side padding */}
+      <View style={styles.topBar}>
+        <Image
+          source={require("@/assets/images/logo-icon.png")}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        <Text style={styles.logoText}>Carelum</Text>
+      </View>
+      <View style={styles.container}>
+        <Text style={styles.heading}>What type of care do you need?</Text>
+        <Text style={styles.subheading}>
+          Joining Care gives you access to caregivers for the whole household.
+        </Text>
 
-      <FlatList
-        data={careOptions}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-        numColumns={2}
-        contentContainerStyle={styles.grid}
-      />
+        <FlatList
+          data={careOptions}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          numColumns={2}
+          contentContainerStyle={styles.grid}
+        />
+      </View>
     </View>
   );
 }
@@ -73,11 +84,41 @@ export default function HomeScreen() {
 const cardWidth = (width - 60) / 2;
 
 const styles = StyleSheet.create({
+  containerWrapper: {
+    flex: 1,
+    backgroundColor: "#f7f1eb",
+  },
   container: {
     flex: 1,
-    paddingTop: 150,
+    paddingTop: 60,
     paddingHorizontal: 20,
     backgroundColor: "#f7f1eb",
+  },
+  topBar: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    backgroundColor: "#ffffff", // Change this to any color like "#003f2b" or "#f7f1eb"
+    borderBottomWidth: 1,
+    borderBottomColor: "#e0e0e0",
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+  },
+  logo: {
+    marginTop: 25,
+    width: 40,
+    height: 40,
+    marginRight: 15,
+    marginLeft: 10,
+    transform: [{ scale: 3.5 }],
+  },
+  logoText: {
+    marginTop: 20,
+    fontSize: 26,
+    fontWeight: "700",
+    color: "rgb(86, 28, 161)",
   },
   heading: {
     fontSize: 20,

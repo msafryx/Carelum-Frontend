@@ -210,13 +210,17 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   logoImage: {
-    width: 120,
-    height: 120,
-    marginRight: 0,
+    marginTop: 80,
+    width: 40,
+    height: 40,
+    marginRight: 20,
+    marginLeft: 60,
+    transform: [{ scale: 5 }],
   },
   logoText: {
+    marginTop: 80,
     color: "#fff",
-    fontSize: 24,
+    fontSize: 35,
     fontWeight: "bold",
     textShadowColor: "#7D3DD2", // optional for visibility
     textShadowOffset: { width: 2, height: 2 },
