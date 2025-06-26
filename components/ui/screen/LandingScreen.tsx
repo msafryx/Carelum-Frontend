@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+
 import {
   Dimensions,
   FlatList,
@@ -101,7 +102,7 @@ export default function LandingScreen({ navigation }: any) {
 
         <TouchableOpacity
           style={styles.getStarted}
-          onPress={() => navigation.navigate("Signup")}
+          onPress={() => navigation.navigate("Home")}
         >
           <Text style={styles.getStartedText}>Get Started</Text>
         </TouchableOpacity>
@@ -171,10 +172,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   activeDot: {
-    backgroundColor: "#003f2b",
+    backgroundColor: "#7D3DD2",
   },
   getStarted: {
-    backgroundColor: "#003f2b",
+    backgroundColor: "#7D3DD2",
     paddingVertical: 16,
     borderRadius: 30,
     width: "100%",
@@ -187,7 +188,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   login: {
-    borderColor: "#003f2b",
+    borderColor: "#7D3DD2",
     borderWidth: 2,
     paddingVertical: 16,
     borderRadius: 30,
@@ -217,7 +218,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 24,
     fontWeight: "bold",
-    textShadowColor: "rgba(0,0,0,0.4)", // optional for visibility
+    textShadowColor: "#7D3DD2", // optional for visibility
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 3,
   },
