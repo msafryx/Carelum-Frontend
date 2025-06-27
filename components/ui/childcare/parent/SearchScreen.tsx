@@ -1,10 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import TopBar from "../../TopBar";
 
-export default function SearchScreen() {
+export default function SearchScreen({ navigation }: any) {
   return (
-    <View style={styles.container}>
-      <Text>Search</Text>
+    <View style={{ flex: 1 }}>
+      <TopBar navigation={navigation} />
+      <View style={styles.container}>
+        <Text>Search</Text>
+      </View>
     </View>
   );
 }

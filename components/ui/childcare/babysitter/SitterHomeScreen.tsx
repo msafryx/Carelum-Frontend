@@ -1,10 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import TopBar from "../../TopBar";
 
-export default function SitterHomeScreen() {
+export default function SitterHomeScreen({ navigation }: any) {
   return (
-    <View style={styles.container}>
-      <Text>Babysitter Home (coming soon)</Text>
+    <View style={{ flex: 1 }}>
+      <TopBar navigation={navigation} />
+      <View style={styles.container}>
+        <Text>Babysitter Home (coming soon)</Text>
+      </View>
     </View>
   );
 }

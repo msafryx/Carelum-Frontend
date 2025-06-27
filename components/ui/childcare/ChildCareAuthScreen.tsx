@@ -1,22 +1,26 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import TopBar from "../TopBar";
 
 export default function ChildCareAuthScreen({ navigation }: any) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>Continue as</Text>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate("ParentTabs")}
-      >
-        <Text style={styles.buttonText}>Parent</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate("SitterHome")}
-      >
-        <Text style={styles.buttonText}>Babysitter</Text>
-      </TouchableOpacity>
+    <View style={{ flex: 1 }}>
+      <TopBar navigation={navigation} />
+      <View style={styles.container}>
+        <Text style={styles.heading}>Continue as</Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("Login", { role: "parent" })}
+        >
+          <Text style={styles.buttonText}>Parent</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("Login", { role: "sitter" })}
+        >
+          <Text style={styles.buttonText}>Babysitter</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

@@ -1,10 +1,11 @@
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
+import ActivitiesScreen from "./ActivitiesScreen";
 import MessagesScreen from "./MessagesScreen";
+import NotificationsScreen from "./NotificationsScreen";
 import ParentHomeScreen from "./ParentHomeScreen";
 import ProfileScreen from "./ProfileScreen";
-import SearchScreen from "./SearchScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -26,11 +27,20 @@ export default function ParentTabs() {
         }}
       />
       <Tab.Screen
-        name="Search"
-        component={SearchScreen}
+        name="Activities"
+        component={ActivitiesScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search" color={color} size={size} />
+            <Ionicons name="list" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Notifications"
+        component={NotificationsScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="notifications" color={color} size={size} />
           ),
         }}
       />

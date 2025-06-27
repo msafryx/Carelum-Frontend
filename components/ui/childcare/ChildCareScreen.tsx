@@ -1,8 +1,15 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import TopBar from "../TopBar";
 
-export default function ChildCareScreen() {
+export default function ChildCareScreen({ navigation }: any) {
   const features = [
     { id: "chat", title: "In-App Chat System" },
     { id: "booking", title: "Booking & Scheduling" },
@@ -13,19 +20,22 @@ export default function ChildCareScreen() {
   ];
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.heading}>Child Care Features</Text>
-      {features.map((feature) => (
-        <TouchableOpacity
-          key={feature.id}
-          style={styles.featureButton}
-          onPress={() => {}}
-        >
-          <Text style={styles.featureText}>{feature.title}</Text>
-          <Ionicons name="chevron-forward" size={20} color="#333" />
-        </TouchableOpacity>
-      ))}
-    </ScrollView>
+    <View style={{ flex: 1 }}>
+      <TopBar navigation={navigation} />
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text style={styles.heading}>Child Care Features</Text>
+        {features.map((feature) => (
+          <TouchableOpacity
+            key={feature.id}
+            style={styles.featureButton}
+            onPress={() => {}}
+          >
+            <Text style={styles.featureText}>{feature.title}</Text>
+            <Ionicons name="chevron-forward" size={20} color="#333" />
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+    </View>
   );
 }
 
