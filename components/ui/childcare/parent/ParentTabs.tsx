@@ -15,6 +15,8 @@ export default function ParentTabs() {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
+        tabBarActiveTintColor: "#EF5A77", // color for the active (selected) tab
+        tabBarInactiveTintColor: "#888888", // color for the inactive tabs
       }}
     >
       <Tab.Screen

@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingHorizontal: 10,
     paddingBottom: 10,
-    backgroundColor: "#f7f1eb",
+    backgroundColor: "#fff",
   },
   backButton: {
     marginRight: 10,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     marginRight: 15,
-    marginLeft: 20,
+    marginLeft: 30,
     transform: [{ scale: 3 }],
   },
   logoText: {
