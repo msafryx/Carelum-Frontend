@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import React from "react";
+import React, { useState } from "react";
 import {
   ScrollView,
   StyleSheet,
@@ -11,14 +11,25 @@ import {
 import TopBar from "../../TopBar";
 
 export default function ParentHomeScreen({ navigation }: any) {
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const handleMenuPress = () => {
+    setMenuVisible((prevState) => !prevState); // Toggle menu visibility
+  };
   return (
     <View style={{ flex: 1 }}>
+      <TouchableOpacity style={styles.burgerButton} onPress={handleMenuPress}>
+        <Ionicons name="menu" size={30} color="black" />
+      </TouchableOpacity>
       <TopBar navigation={navigation} onMenuPress={() => {}} />
       <ScrollView contentContainerStyle={styles.container}>
         <TextInput placeholder="Search sitters" style={styles.search} />
 
         <View style={styles.quickRow}>
-          <TouchableOpacity style={styles.quickButton}>
+          <TouchableOpacity
+            style={styles.quickButton}
+            onPress={() => navigation.navigate("BookSitter")}
+          >
             <Text style={styles.quickText}>Book Sitter</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.quickButton}>
@@ -128,5 +139,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     elevation: 4,
+  },
+  burgerButton: {
+    position: "absolute", // Position it on top of the screen
+    top: 40, // Align with the top bar's height (adjust as necessary)
+    right: 10, // Right corner
+    zIndex: 1, // Ensure it's on top of the content
   },
 });

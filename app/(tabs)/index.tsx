@@ -1,6 +1,7 @@
 import SitterHomeScreen from "@/components/ui/childcare/babysitter/SitterHomeScreen";
 import ChildCareAuthScreen from "@/components/ui/childcare/ChildCareAuthScreen";
 import ChildCareScreen from "@/components/ui/childcare/ChildCareScreen";
+import BookSitterScreen from "@/components/ui/childcare/parent/BookSitterScreen";
 import ChatbotScreen from "@/components/ui/childcare/parent/ChatbotScreen";
 import MessagesScreen from "@/components/ui/childcare/parent/MessagesScreen";
 import ParentTabs from "@/components/ui/childcare/parent/ParentTabs";
@@ -39,6 +40,7 @@ export default function App() {
       <Stack.Screen name="ChildCare" component={ChildCareScreen} />
       <Stack.Screen name="Messages" component={MessagesScreen} />
       <Stack.Screen name="Chatbot" component={ChatbotScreen} />
+      <Stack.Screen name="BookSitter" component={BookSitterScreen} />
     </Stack.Navigator>
   );
 }
