@@ -41,9 +41,16 @@ const careOptions = [
   },
 ];
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }: any) {
   const renderItem = ({ item }: any) => (
-    <TouchableOpacity style={styles.card} onPress={() => {}}>
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => {
+        if (item.id === "1") {
+          navigation.navigate("ChildCareAuth");
+        }
+      }}
+    >
       <Image source={item.image} style={styles.image} resizeMode="contain" />
       <View style={styles.textRow}>
         <Text style={styles.title}>{item.title}</Text>
