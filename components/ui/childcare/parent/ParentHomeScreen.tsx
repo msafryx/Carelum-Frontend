@@ -32,7 +32,10 @@ export default function ParentHomeScreen({ navigation }: any) {
           >
             <Text style={styles.quickText}>Book Sitter</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.quickButton}>
+          <TouchableOpacity
+            style={styles.quickButton}
+            onPress={() => navigation.navigate("Schedule")}
+          >
             <Text style={styles.quickText}>Schedule</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.quickButton}>

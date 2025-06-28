@@ -2,7 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import ActivitiesScreen from "./ActivitiesScreen";
-import MessagesScreen from "./MessagesScreen";
+import MessagesStack from "./MessagesStack";
 import NotificationsScreen from "./NotificationsScreen";
 import ParentHomeStack from "./ParentHomeStack";
 import ProfileScreen from "./ProfileScreen";
@@ -47,7 +47,7 @@ export default function ParentTabs() {
       />
       <Tab.Screen
         name="Messages"
-        component={MessagesScreen}
+        component={MessagesStack}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons
