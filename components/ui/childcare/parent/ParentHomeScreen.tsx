@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
   },
   chatbotButton: {
     position: "absolute",
-    bottom: 80,
+    bottom: 30,
     right: 20,
     backgroundColor: "#7D3DD2",
     width: 60,
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   },
   emergencyButton: {
     position: "absolute",
-    bottom: 80,
+    bottom: 30,
     left: 20,
     backgroundColor: "#d9534f",
     width: 60,
@@ -141,9 +141,9 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   burgerButton: {
-    position: "absolute", // Position it on top of the screen
-    top: 40, // Align with the top bar's height (adjust as necessary)
-    right: 10, // Right corner
-    zIndex: 1, // Ensure it's on top of the content
+    position: "absolute",
+    top: 40,
+    right: 10,
+    zIndex: 1,
   },
 });

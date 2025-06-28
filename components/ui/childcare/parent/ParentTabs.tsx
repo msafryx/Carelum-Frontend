@@ -4,7 +4,7 @@ import React from "react";
 import ActivitiesScreen from "./ActivitiesScreen";
 import MessagesScreen from "./MessagesScreen";
 import NotificationsScreen from "./NotificationsScreen";
-import ParentHomeScreen from "./ParentHomeScreen";
+import ParentHomeStack from "./ParentHomeStack";
 import ProfileScreen from "./ProfileScreen";
 
 const Tab = createBottomTabNavigator();
@@ -15,13 +15,12 @@ export default function ParentTabs() {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarActiveTintColor: "#EF5A77", // color for the active (selected) tab
-        tabBarInactiveTintColor: "#888888", // color for the inactive tabs
+        tabBarActiveTintColor: "#EF5A77",
       }}
     >
       <Tab.Screen
         name="ParentHome"
-        component={ParentHomeScreen}
+        component={ParentHomeStack}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" color={color} size={size} />
@@ -51,7 +50,11 @@ export default function ParentTabs() {
         component={MessagesScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="chatbubble" color={color} size={size} />
+            <Ionicons
+              name="chatbubble-ellipses-outline"
+              color={color}
+              size={size}
+            />
           ),
         }}
       />
