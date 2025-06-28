@@ -102,7 +102,10 @@ export default function ParentHomeScreen({ navigation }: any) {
           >
             <Text style={styles.quickText}>Schedule</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.quickButton}>
+          <TouchableOpacity
+            style={styles.quickButton}
+            onPress={() => navigation.navigate("Track")}
+          >
             <Text style={styles.quickText}>Track</Text>
           </TouchableOpacity>
         </View>

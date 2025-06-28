@@ -6,6 +6,7 @@ import ChildProfilesScreen from "./ChildProfilesScreen";
 import ParentHomeScreen from "./ParentHomeScreen";
 import ScheduleScreen from "./ScheduleScreen";
 import SettingsScreen from "./SettingsScreen";
+import TrackScreen from "./TrackScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ export default function ParentHomeStack() {
       <Stack.Screen name="Schedule" component={ScheduleScreen} />
       <Stack.Screen name="ChildProfiles" component={ChildProfilesScreen} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
+      <Stack.Screen name="Track" component={TrackScreen} />
     </Stack.Navigator>
   );
 }
